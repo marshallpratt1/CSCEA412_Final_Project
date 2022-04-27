@@ -13,9 +13,21 @@ population_size = 10
 num_objects = 10
 #Initiate population of critters
 critters = util.initPop(population_size, num_objects)
-print(critters)
 childcritters = util.mutate(critters)
-print(childcritters)
+
+
+for i in range(len(critters)):
+    print("Critter: ", critters[i])
+    print("Child:   ", childcritters[i])
+    print("")
+
+critters += childcritters
+values = util.getVals(critters, vals, weights)
+for i in range(len(critters)):
+    print("Critter: ", critters[i])
+    print("Value:   ", vals[i])
+    print("")
+
 #TODO APPLY MUTATION OPERATION
 
 
