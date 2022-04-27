@@ -25,7 +25,7 @@ critters += childcritters
 values = util.getVals(critters, vals, weights)
 for i in range(len(critters)):
     print("Critter: ", critters[i])
-    print("Value:   ", vals[i])
+    print("Value:   ", values[i])
     print("")
 
 #TODO APPLY MUTATION OPERATION
