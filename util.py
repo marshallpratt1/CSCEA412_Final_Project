@@ -21,9 +21,14 @@ def getVals(critter, vals, weights):
         weight = 0
         for i in range(len(critter[j])):
             if critter[j][i] == 1:
+                #Only grab items as long as they put us under 50 weight
                 if weight + weights[i] <=50:
                     value = vals[i] + value
                     weight = weights[i] + weight
+                #If they put us over, set value to 0 and break
+                else:
+                    value = 0
+                    break
         valArray.append(value)
     return valArray
 
