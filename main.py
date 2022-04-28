@@ -1,13 +1,18 @@
 #################################################
 #
 #This program provides a solution to the knapsack problem
+#using an Evolutionary Programming approach
 #I love robbing people!
 #
+#Marshall Robinson
+#Maddy "Marshall" Cherrier
+#Marshall Pratt
+#4-28-2022
 #################################################
 
 #Hard coded value and weight arrays
 import util, random, numpy
-NUM_GENERATIONS = 100
+NUM_GENERATIONS = 50
 best_generation = 0
 
 vals = [300,1500,100,1000,3425,50,850,550,15,2000]
@@ -17,7 +22,6 @@ num_objects = 10
 
 #Initiate population of critters
 critters = util.initPop(population_size, num_objects)
-childcritters = util.mutate(critters)
 
 #main loop
 best_gen_value = 0
@@ -35,7 +39,9 @@ for i in range(NUM_GENERATIONS):
     bv_index = values.index(best_val)
     best_critter = critters[bv_index]
 
+    #store the best generation
     if best_val > best_gen_value:
+        best_gen_value = best_val
         best_generation = i+1
 
     print("Generation: ", i+1)
